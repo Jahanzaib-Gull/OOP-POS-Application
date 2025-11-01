@@ -28,7 +28,7 @@ namespace Layered_project.Customer
                 }
                 else if (option == "3")
                 {
-                    DeleteProduct();
+                    DeleteCustomer();
                 }
                 else if (option == "4")
                 {
@@ -199,12 +199,12 @@ namespace Layered_project.Customer
             }
         }
 
-        public void DeleteProduct()
+        public void DeleteCustomer()
         {
-            Console.WriteLine("Enter product name");
-            string name = Console.ReadLine();
+            Console.WriteLine("Enter Customer Id");
+            int id = int.Parse(Console.ReadLine());
 
-            bool result = service.DelteCustomerByName(name);
+            bool result = service.DelteCustomerByID(id);
             if (result)
             {
                 Console.WriteLine("Customer deleted successfully");

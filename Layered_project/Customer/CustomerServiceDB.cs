@@ -25,5 +25,9 @@ namespace Layered_project.Customer
             return _repo.GetAll();
         }
 
+        public bool DelteCustomerByID(int id)
+        {
+            return _repo.Delete(id);
+        }
     }
 }

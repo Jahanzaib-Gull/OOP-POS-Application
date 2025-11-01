@@ -15,7 +15,7 @@ namespace Layered_project.Customer
         {
             using (SqlConnection conn = new SqlConnection(DBConnection))
             {
-                string query = "INSERT INTO Customers (Name, Phone, Age, Address)" +
+                string query = "INSERT INTO Customer (Name, Phone, Age, Address)" +
                                "VALUES (@name, @phone, @age, @address)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@name", customer.name);
@@ -36,7 +36,7 @@ namespace Layered_project.Customer
             using (SqlConnection conn = new SqlConnection(DBConnection))
             {
                 conn.Open();
-                string query = "SELECT * FROM Customers";
+                string query = "SELECT * FROM Customer";
                 SqlCommand cmd = new SqlCommand(query, conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -52,6 +52,21 @@ namespace Layered_project.Customer
                 reader.Close();
             }
             return customers;
+        }
+
+        public bool Delete(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(DBConnection))
+            {
+                conn.Open();
+                string query = "DELETE FROM Customer WHERE Id = @id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0) return true;
+                return false;
+            }
         }
     }
 }
