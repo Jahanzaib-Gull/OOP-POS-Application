@@ -29,5 +29,29 @@ namespace Layered_project.Customer
                 return false;
             }
         }
+
+        public List<CustomerModel> GetAll()
+        {
+            List<CustomerModel> customers = new List<CustomerModel>();
+            using (SqlConnection conn = new SqlConnection(DBConnection))
+            {
+                conn.Open();
+                string query = "SELECT * FROM Customers";
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = Convert.ToInt32(reader["Id"]);
+                    string name = reader["Name"].ToString();
+                    string phoneNumber = reader["Phone"].ToString();
+                    int age = Convert.ToInt32(reader["Age"]);
+                    string address = reader["Address"].ToString();
+                    customers.Add(new CustomerModel(id, name, phoneNumber, age, address));
+                }
+                reader.Close();
+            }
+            return customers;
+        }
     }
 }

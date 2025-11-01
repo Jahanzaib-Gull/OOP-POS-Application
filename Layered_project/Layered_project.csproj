@@ -49,6 +49,7 @@
     <Compile Include="Customer\CustomerService.cs" />
     <Compile Include="Customer\CustomerServiceDB.cs" />
     <Compile Include="Customer\CustomerUI.cs" />
+    <Compile Include="Customer\CustomerUIDB.cs" />
     <Compile Include="Order\HistoryUI.cs" />
     <Compile Include="Order\OrderItem.cs" />
     <Compile Include="Order\OrderModel.cs" />

@@ -20,5 +20,10 @@ namespace Layered_project.Customer
             return _repo.Create(customer);
         }
 
+        public List<CustomerModel> GetAllCustomers()
+        {
+            return _repo.GetAll();
+        }
+
     }
 }
