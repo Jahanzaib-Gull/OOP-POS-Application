@@ -1,0 +1,8 @@
+customer,zaib,2321432,fdsffdsf
+item,laptop,3,27,81
+customer,umer,324234,dsfdsf
+item,mob,12,434,5208
+item,laptop,12,27,324
+customer,zaib,2321432,fdsffdsf
+item,mob,13,434,5642
+item,laptop,11,27,297
