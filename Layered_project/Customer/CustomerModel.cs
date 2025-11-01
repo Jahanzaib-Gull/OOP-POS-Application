@@ -9,12 +9,22 @@ namespace Layered_project.Customer
 {
     internal class CustomerModel
     {
-        private string name;
-        private string phone;
-        private int age;
-        private string address;
+        public int id { get; set; }
+        public string name { get; set; }
+        public string phone { get; set; }
+        public int age { get; set; }
+        public string address { get; set; }
 
-        public CustomerModel(string name, string phone, int age, string address )
+        public CustomerModel(int id, string name, string phone, int age, string address)
+        {
+            this.id = id;
+            this.name = name;
+            this.phone = phone;
+            this.age = age;
+            this.address = address;
+        }
+
+        public CustomerModel(string name, string phone, int age, string address)
         {
             this.name = name;
             this.phone = phone;
@@ -24,46 +34,7 @@ namespace Layered_project.Customer
 
         public override string ToString()
         {
-            return $"{name},{age},{phone},{address}";
-        }
-
-        public string SetName(string name)
-        {
-            return this.name = name;
-        }
-
-        public String GetName()
-        {
-            return name;
-        }
-        public int GetAge()
-        {
-            return age;
-        }
-
-        public int SetAge(int age)
-        {
-            return this.age = age;
-        }
-
-        public string GetAddress()
-        {
-            return address;
-        }
-
-        public string SetAddress(String address)
-        {
-            return this.address = address;
-        }
-
-        public string GetPhone()
-        {
-            return phone;
-        }
-        
-        public string SetPhone(String phone)
-        {
-            return this.phone = phone;
+            return $"Id: {id}, Name: {name}, Phone: {phone}, Age: {age}, Address: {address}";
         }
     }
 }

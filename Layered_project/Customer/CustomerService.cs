@@ -30,7 +30,7 @@ namespace Layered_project.Customer
         {
             foreach (var customer in _repo.GetAllCustomers())
             {
-                if (customer.GetName() == name)
+                if (customer.name == name)
                 {
                     return customer;
                 }
@@ -44,7 +44,7 @@ namespace Layered_project.Customer
             List<CustomerModel> matchedCustomers = new List<CustomerModel>();
             foreach (var customer in _repo.GetAllCustomers())
             {
-                if (customer.GetName().ToLower().StartsWith(ch.ToLower()))
+                if (customer.name.ToLower().StartsWith(ch.ToLower()))
                 {
                     matchedCustomers.Add(customer);
                 }
@@ -57,7 +57,7 @@ namespace Layered_project.Customer
         {
             foreach (var customer in _repo.GetAllCustomers())
             {
-                if (customer.GetPhone() == phone)
+                if (customer.phone == phone)
                 {
                     return customer;
                 }
@@ -70,7 +70,7 @@ namespace Layered_project.Customer
             List<CustomerModel> matchedCustomers = new List<CustomerModel>();
             foreach (var customer in _repo.GetAllCustomers())
             {
-                if (customer.GetAddress().ToLower().StartsWith(address.ToLower()))
+                if (customer.address.ToLower().StartsWith(address.ToLower()))
                 {
                     matchedCustomers.Add(customer);
                 }
@@ -84,7 +84,7 @@ namespace Layered_project.Customer
             List<CustomerModel> matchedCustomers = new List<CustomerModel>();
             foreach (var customer in _repo.GetAllCustomers())
             {
-                if (customer.GetAge() == age)
+                if (customer.age == age)
                 {
                     matchedCustomers.Add(customer);
                 }
@@ -98,9 +98,9 @@ namespace Layered_project.Customer
             List<CustomerModel> customers = _repo.GetAllCustomers();
             foreach (var customer in customers)
             {
-                if (customer.GetName() == name)
+                if (customer.name == name)
                 {
-                    customer.SetPhone(phone);
+                    customer.phone = phone;
                     _repo.SaveAllInFile(customers);
                     return true;
 
@@ -115,7 +115,7 @@ namespace Layered_project.Customer
             int count = 0;
             foreach (var customer in customers)
             {
-                if (customer.GetName() == name)
+                if (customer.name == name)
                 {
                     customers.RemoveAt(count);
                     _repo.SaveAllInFile(customers);

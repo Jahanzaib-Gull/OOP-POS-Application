@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="Customer\CustomerModel.cs" />
     <Compile Include="Customer\CustomerRepo.cs" />
+    <Compile Include="Customer\CustomerRepoDB.cs" />
     <Compile Include="Customer\CustomerService.cs" />
+    <Compile Include="Customer\CustomerServiceDB.cs" />
     <Compile Include="Customer\CustomerUI.cs" />
     <Compile Include="Order\HistoryUI.cs" />
     <Compile Include="Order\OrderItem.cs" />
