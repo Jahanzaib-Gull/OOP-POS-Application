@@ -29,5 +29,15 @@ namespace Layered_project.Customer
         {
             return _repo.Delete(id);
         }
+
+        public bool UpdateCUstomer(CustomerModel customer)
+        {
+            return _repo.Update(customer);
+        }
+
+        public CustomerModel GetCustomer(int id)
+        {
+            return _repo.GetById(id);
+        }
     }
 }

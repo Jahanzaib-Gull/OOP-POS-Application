@@ -68,5 +68,43 @@ namespace Layered_project.Customer
                 return false;
             }
         }
+
+        public bool Update(CustomerModel customer)
+        {
+            using (SqlConnection conn = new SqlConnection(DBConnection))
+            {
+                Console.Write(customer.ToString());
+                conn.Open();
+                string query = "UPDATE Customers SET Name=@name, Phone=@phone, Age=@age, Address=@address WHERE Id=@id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", customer.id);
+                cmd.Parameters.AddWithValue("@name", customer.name);
+                cmd.Parameters.AddWithValue("@phone", customer.phone);
+                cmd.Parameters.AddWithValue("@age", customer.age);
+                cmd.Parameters.AddWithValue("@address", customer.address);
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0) return true;
+                return false;
+            }
+        }
+
+        public CustomerModel GetById(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(DBConnection))
+            {
+                conn.Open();
+                string query = "SELECT * FROM Customers WHERE id=@id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                string name = reader["name"].ToString();
+                string phoneNumber = reader["phoneNumber"].ToString();
+                int age = Convert.ToInt32(reader["age"]);
+                string address = reader["address"].ToString();
+                return new CustomerModel(id, name, phoneNumber, age, address);
+            }
+        }
     }
 }

@@ -183,19 +183,26 @@ namespace Layered_project.Customer
         }
         public void UpdateCustomer()
         {
-            Console.WriteLine("Enter product name");
-            string name = Console.ReadLine();
-            Console.WriteLine("Enter product price");
-            string phone = Console.ReadLine();
+            Console.WriteLine("Enter Customer Id");
+            int id = int.Parse(Console.ReadLine());
 
-            bool result = service.UpdateCustomerPhone(name, phone);
+            CustomerModel existingCustomer = service.GetCustomer(id);
+            if (existingCustomer == null)
+            {
+                Console.WriteLine("Customer not found");
+                return;
+            }
+            Console.WriteLine("Enter new customer details");
+            CustomerModel updatedCustomer = TakeInput();
+            updatedCustomer.id = id;
+            bool result = service.UpdateCUstomer(updatedCustomer);
             if (result)
             {
                 Console.WriteLine("Customer updated successfully");
             }
             else
             {
-                Console.WriteLine("Customer not found");
+                Console.WriteLine("Customer not Updated");
             }
         }
 
@@ -218,6 +225,10 @@ namespace Layered_project.Customer
 
         public void DisplayAll()
         {
+            if (service.GetAllCustomers().Count == 0)
+            {
+                Console.WriteLine("No customers found");
+            }
             foreach (var customer in service.GetAllCustomers())
             {
                 Console.WriteLine(customer.ToString());
