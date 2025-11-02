@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Layered_project.Customer;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -29,5 +30,31 @@ namespace Layered_project.Product
                 return false;
             }
         }
+
+        public List<ProductModel> GetAll()
+        {
+            List<ProductModel> products = new List<ProductModel>();
+            using (SqlConnection conn = new SqlConnection(DBConnection))
+            {
+                conn.Open();
+                string query = "SELECT * FROM Product";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = Convert.ToInt32(reader["Id"]);
+                    string name = reader["Name"].ToString();
+                    string description = reader["Description"].ToString();
+                    float purchasePrice = Convert.ToSingle(reader["PurchasePrice"]);
+                    float salePrice = Convert.ToSingle(reader["SalePrice"]);
+                    float discount = Convert.ToSingle(reader["Discount"]);
+                    ProductModel product = new ProductModel(id, name, description, purchasePrice, salePrice, discount);
+                    products.Add(product);
+                }
+                reader.Close();
+            }
+            return products;
+        }
     }
 }
+

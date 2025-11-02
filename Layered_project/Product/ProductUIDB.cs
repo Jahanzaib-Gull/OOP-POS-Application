@@ -229,7 +229,7 @@ namespace Layered_project.Product
 
         public void DisplayAll()
         {
-            foreach (var product in service.GetAllData())
+            foreach (var product in service.GetAllProducts())
             {
                 Console.WriteLine(product.ToString());
             }

@@ -17,5 +17,9 @@ namespace Layered_project.Product
         {
             return _repo.Create(product);
         }
+        public List<ProductModel> GetAllProducts()
+        {
+            return _repo.GetAll();
+        }
     }
 }
