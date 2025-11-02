@@ -24,7 +24,7 @@ namespace Layered_project.Customer
 
         public List<CustomerModel> GetAllCustomers()
         {
-            return customers;
+            return _repo.GetAll();
         }
 
         public bool DelteCustomerByID(int id)

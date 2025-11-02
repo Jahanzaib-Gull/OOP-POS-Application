@@ -68,7 +68,47 @@ namespace Layered_project.Product
                 if (rowsAffected > 0) return true;
                 return false;
             }
-        }   
+        }
+
+        public bool Update(ProductModel product)
+        {
+            using (SqlConnection conn = new SqlConnection(DBConnection))
+            {
+                string query = "UPDATE Product SET Name = @name, Description = @description, " +
+                               "PurchasePrice = @purchasePrice, SalePrice = @salePrice, Discount = @discount " +
+                               "WHERE Id = @id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@name", product.name);
+                cmd.Parameters.AddWithValue("@description", product.description);
+                cmd.Parameters.AddWithValue("@purchasePrice", product.purchasePrice);
+                cmd.Parameters.AddWithValue("@salePrice", product.salePrice);
+                cmd.Parameters.AddWithValue("@discount", product.discount);
+                cmd.Parameters.AddWithValue("@id", product.id);
+                conn.Open();
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0) return true;
+                return false;
+            }
+        }
+
+        public ProductModel GetById(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(DBConnection))
+            {
+                conn.Open();
+                string query = "SELECT * FROM Customers WHERE id=@id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                string name = reader["Name"].ToString();
+                string description = reader["Description"].ToString();
+                float purchasePrice = Convert.ToSingle(reader["PurchasePrice"]);
+                float salePrice = Convert.ToSingle(reader["SalePrice"]);
+                float discount = Convert.ToSingle(reader["Discount"]);
+                return new ProductModel(id, name, description, purchasePrice, salePrice, discount);
+            }
+        }
     }
 }
 

@@ -26,5 +26,15 @@ namespace Layered_project.Product
         {
             return _repo.Delete(id);
         }
+
+        public bool UpdateProduct(ProductModel product)
+        {
+            return _repo.Update(product);
+        }
+
+        public ProductModel GetProduct(int id)
+        {
+            return _repo.GetById(id);
+        }
     }
 }

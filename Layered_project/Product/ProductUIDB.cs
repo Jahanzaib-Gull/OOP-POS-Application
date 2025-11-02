@@ -191,20 +191,27 @@ namespace Layered_project.Product
 
         public void UpdateProduct()
         {
-            Console.WriteLine("Enter product name");
-            string name = Console.ReadLine();
-            Console.WriteLine("Enter product price");
-            float price = float.Parse(Console.ReadLine());
-
-            bool result = service.UpdateProductPrice(name, price);
-
+            Console.WriteLine("Enter product ID");
+            int id = int.Parse(Console.ReadLine());
+            
+            ProductModel existingProduct = service.GetProduct(id);
+            if(existingProduct == null)
+            {
+                Console.WriteLine("Product not found");
+                Console.ReadKey();
+                return;
+            }
+            Console.WriteLine("Enter new product details");
+            ProductModel updatedProduct = TakeInput();
+            updatedProduct.id = id;
+            bool result = service.UpdateProduct(updatedProduct);
             if (result)
             {
                 Console.WriteLine("Product updated successfully");
             }
             else
             {
-                Console.WriteLine("Product not found");
+                Console.WriteLine("Product not updated");
             }
             Console.ReadKey();
         }
