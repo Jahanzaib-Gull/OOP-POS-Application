@@ -21,5 +21,10 @@ namespace Layered_project.Product
         {
             return _repo.GetAll();
         }
+
+        public bool DeleteProduct(int id)
+        {
+            return _repo.Delete(id);
+        }
     }
 }

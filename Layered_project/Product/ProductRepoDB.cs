@@ -55,6 +55,20 @@ namespace Layered_project.Product
             }
             return products;
         }
+
+        public bool Delete(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(DBConnection))
+            {
+                string query = "DELETE FROM Product WHERE Id = @id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                conn.Open();
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0) return true;
+                return false;
+            }
+        }   
     }
 }
 

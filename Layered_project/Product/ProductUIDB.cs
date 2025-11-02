@@ -211,11 +211,9 @@ namespace Layered_project.Product
 
         public void DeleteProduct()
         {
-            Console.WriteLine("Enter product name");
-            string name = Console.ReadLine();
-
-            bool result = service.DelteProductByName(name);
-
+            Console.WriteLine("Enter product ID");
+            int id = int.Parse(Console.ReadLine());
+            bool result = service.DeleteProduct(id);
             if (result)
             {
                 Console.WriteLine("Product deleted successfully");
