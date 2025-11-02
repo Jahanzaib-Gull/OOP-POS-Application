@@ -58,8 +58,11 @@
     <Compile Include="Order\OrderUI.cs" />
     <Compile Include="Product\ProductModel.cs" />
     <Compile Include="Product\ProductRepo.cs" />
+    <Compile Include="Product\ProductRepoDB.cs" />
     <Compile Include="Product\ProductService.cs" />
+    <Compile Include="Product\ProductServiceDB.cs" />
     <Compile Include="Product\ProductUI.cs" />
+    <Compile Include="Product\ProductUIDB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shop.cs" />

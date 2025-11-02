@@ -29,7 +29,7 @@ namespace Layered_project.Product
         {
             foreach(var product in _repo.GetAllProducts())
             {
-                if(product.GetName() == name)
+                if(product.name == name)
                 {
                     return product;
                 }
@@ -42,7 +42,7 @@ namespace Layered_project.Product
             List<ProductModel> matchedProducts = new List<ProductModel>();
             foreach (var product in _repo.GetAllProducts())
             {
-                if (product.GetSalePrice() == price)
+                if (product.salePrice == price)
                 {
                     matchedProducts.Add(product);
                 }
@@ -56,7 +56,7 @@ namespace Layered_project.Product
             List<ProductModel> matchedProducts = new List<ProductModel>();
             foreach (var product in _repo.GetAllProducts())
             {
-                if (product.GetSalePrice() >= start_price && product.GetSalePrice() <= end_price)
+                if (product.salePrice >= start_price && product.salePrice <= end_price)
                 {
                     matchedProducts.Add(product);
                 }
@@ -70,7 +70,7 @@ namespace Layered_project.Product
             List<ProductModel> matchedProducts = new List<ProductModel>();
             foreach (var product in _repo.GetAllProducts())
             {
-                if ((product.GetSalePrice() - product.GetPurchasePrice()) == Diff)
+                if ((product.salePrice - product.purchasePrice) == Diff)
                 {
                     matchedProducts.Add(product);
                 }
@@ -83,7 +83,7 @@ namespace Layered_project.Product
             List<ProductModel> matchedProducts = new List<ProductModel>();
             foreach (var product in _repo.GetAllProducts())
             {
-                if (product.GetName().ToLower().Contains(chars.ToLower()))
+                if (product.name.ToLower().Contains(chars.ToLower()))
                 {
                     matchedProducts.Add(product);
                 }
@@ -96,9 +96,9 @@ namespace Layered_project.Product
             List<ProductModel> products = _repo.GetAllProducts();
             foreach (var product in products)
             {
-                if(product.GetName()== name)
+                if(product.name== name)
                 {
-                    product.SetSalePrice(salePrice);
+                    product.salePrice = salePrice;
                     _repo.SaveAllInFile(products);
                     return true;
 
@@ -113,7 +113,7 @@ namespace Layered_project.Product
             int count = 0;
             foreach (var product in products)
             {
-                if (product.GetName() == name)
+                if (product.name == name)
                 {
                     products.RemoveAt(count);
                     _repo.SaveAllInFile(products);

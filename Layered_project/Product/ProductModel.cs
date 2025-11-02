@@ -8,11 +8,12 @@ namespace Layered_project.Product
 {
     internal class ProductModel
     {
-        private string name;
-        private string description;
-        private float purchasePrice;
-        private float salePrice;
-        private float discount;
+        public int id { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
+        public float purchasePrice { get; set; }
+        public float salePrice { get; set; }
+        public float discount { get; set; }
 
         public ProductModel()
         {
@@ -28,51 +29,20 @@ namespace Layered_project.Product
             this.discount = discount;
         }
 
-        public void SetName(string name)
+        public ProductModel(int id ,string name, string desc, float pprice, float salePrice, float discount)
         {
+            this.id = id;
             this.name = name;
-        }
-        public string GetName()
-        {
-            return this.name;
-        }
-
-
-        public void SetDesc(string desc)
-        {
-            this.description = desc;
-        }
-        public string GetDesc()
-        {
-            return this.description;
+            description = desc;
+            purchasePrice = pprice;
+            this.salePrice = salePrice;
+            this.discount = discount;
         }
 
-
-        public void SetPurchasePrice(float price)
-        {
-            this.purchasePrice = price;
-        }
-        public float GetPurchasePrice()
-        {
-            return this.purchasePrice;
-        }
-
-        public void SetSalePrice(float price)
-        {
-            this.salePrice = price;
-        }
-        public float GetSalePrice()
-        {
-            return this.salePrice - this.discount;
-        }
-        public float GetDiscount()
-        {
-            return this.discount;
-        }
 
         public override string ToString()
         {
-            return $"{name},{description},{purchasePrice},{salePrice},{discount}";
+            return $"ID: {id}, Name: {name}, Description: {description}, Purchase Price: {purchasePrice}, Sale Price: {salePrice}, Discount: {discount}";
         }
     }
 }
