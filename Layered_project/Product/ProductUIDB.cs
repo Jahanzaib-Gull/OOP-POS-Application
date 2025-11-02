@@ -109,10 +109,13 @@ namespace Layered_project.Product
         {
             Console.WriteLine("Enter product name");
             string name = Console.ReadLine();
-            ProductModel product = service.SearchByName(name);
-            if (product != null)
+            List<ProductModel> products = service.SearchByName(name);
+            if (products != null)
             {
-                Console.WriteLine(product.ToString());
+                foreach(var product in products)
+                {
+                    Console.WriteLine(product.ToString());
+                }
             }
             else
             {
@@ -126,14 +129,15 @@ namespace Layered_project.Product
             Console.WriteLine("Enter product price");
             float price = float.Parse(Console.ReadLine());
             List<ProductModel> products = service.SearchByPrice(price);
-            foreach (var product in products)
-            {
-                Console.WriteLine(product.ToString());
-            }
             if (products.Count == 0)
             {
                 Console.WriteLine("No products found");
             }
+            foreach (var product in products)
+            {
+                Console.WriteLine(product.ToString());
+            }
+            
             Console.ReadKey();
         }
 

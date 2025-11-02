@@ -36,5 +36,75 @@ namespace Layered_project.Product
         {
             return _repo.GetById(id);
         }
+
+        public List<ProductModel> SearchByName(string name) 
+        { 
+            List<ProductModel> products = _repo.GetAll();
+            List<ProductModel> matchedProducts = new List<ProductModel>();
+            foreach (ProductModel product in products) 
+            {
+                if (product.name.ToLower() == name.ToLower())
+                {
+                    matchedProducts.Add(product);
+                }
+            }
+            return matchedProducts;
+        }
+
+        public List<ProductModel> SearchByPrice(float price)
+        {
+            List<ProductModel> products = _repo.GetAll();
+            List<ProductModel> matchedProducts = new List<ProductModel>();
+            foreach (ProductModel product in products)
+            {
+                if (product.salePrice== price)
+                {
+                    matchedProducts.Add(product);
+                }
+            }
+            return matchedProducts;
+        }
+
+        public List<ProductModel> SearchByPriceRange(float min, float max)
+        {
+            List<ProductModel> products = _repo.GetAll();
+            List<ProductModel> matchedProducts = new List<ProductModel>();
+            foreach (ProductModel product in products)
+            {
+                if (product.salePrice >= min && product.salePrice<=max )
+                {
+                    matchedProducts.Add(product);
+                }
+            }
+            return matchedProducts;
+        }
+
+        public List<ProductModel> SearchByPriceDiff(float price)
+        {
+            List<ProductModel> products = _repo.GetAll();
+            List<ProductModel> matchedProducts = new List<ProductModel>();
+            foreach (ProductModel product in products)
+            {
+                if ((product.salePrice - product.purchasePrice) == price)
+                {
+                    matchedProducts.Add(product);
+                }
+            }
+            return matchedProducts;
+        }
+
+        public List<ProductModel> SearchByNameChar(string chars)
+        {
+            List<ProductModel> products = _repo.GetAll();
+            List<ProductModel> matchedProducts = new List<ProductModel>();
+            foreach (ProductModel product in products)
+            {
+                if (product.name.ToLower().Contains(chars.ToLower()))
+                {
+                    matchedProducts.Add(product);
+                }
+            }
+            return matchedProducts;
+        }
     }
 }
