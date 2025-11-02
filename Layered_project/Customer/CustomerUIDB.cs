@@ -107,10 +107,13 @@ namespace Layered_project.Customer
         {
             Console.WriteLine("Enter customer name");
             string name = Console.ReadLine();
-            CustomerModel customer = service.SearchByName(name);
-            if (customer != null)
+            List<CustomerModel> customers = service.SearchByName(name);
+            if (customers != null)
             {
-                Console.WriteLine(customer.ToString());
+                foreach (var customer in customers)
+                {
+                    Console.WriteLine(customer.ToString());
+                }
             }
             else
             {
