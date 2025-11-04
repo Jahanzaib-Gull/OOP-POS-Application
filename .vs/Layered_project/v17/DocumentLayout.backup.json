@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\New folder (2)\\sem2\\OOPS\\Layered_project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D51E1EE4-4652-4825-B715-DC6402E95132}|Layered_project\\Layered_project.csproj|D:\\New folder (2)\\sem2\\OOPS\\Layered_project\\layered_project\\customer\\customerrepodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D51E1EE4-4652-4825-B715-DC6402E95132}|Layered_project\\Layered_project.csproj|d:\\new folder (2)\\sem2\\oops\\layered_project\\layered_project\\customer\\customerrepodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D51E1EE4-4652-4825-B715-DC6402E95132}|Layered_project\\Layered_project.csproj|solutionrelative:layered_project\\customer\\customerrepodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -27,7 +27,7 @@
       "RelativeMoniker": "D:0:0:{D51E1EE4-4652-4825-B715-DC6402E95132}|Layered_project\\Layered_project.csproj|solutionrelative:layered_project\\product\\productuidb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D51E1EE4-4652-4825-B715-DC6402E95132}|Layered_project\\Layered_project.csproj|d:\\new folder (2)\\sem2\\oops\\layered_project\\layered_project\\product\\productservicedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D51E1EE4-4652-4825-B715-DC6402E95132}|Layered_project\\Layered_project.csproj|D:\\New folder (2)\\sem2\\OOPS\\Layered_project\\layered_project\\product\\productservicedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D51E1EE4-4652-4825-B715-DC6402E95132}|Layered_project\\Layered_project.csproj|solutionrelative:layered_project\\product\\productservicedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -110,8 +110,7 @@
               "RelativeToolTip": "Layered_project\\Product\\ProductUIDB.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAJUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T11:40:20.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-02T11:40:20.407Z"
             },
             {
               "$type": "Document",
@@ -123,8 +122,7 @@
               "RelativeToolTip": "Layered_project\\Product\\ProductServiceDB.cs",
               "ViewState": "AgIAAFIAAAAAAAAAAAAUwF8AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T11:39:26.458Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-02T11:39:26.458Z"
             },
             {
               "$type": "Document",
@@ -148,8 +146,7 @@
               "RelativeToolTip": "Layered_project\\Customer\\CustomerUIDB.cs",
               "ViewState": "AgIAAOEAAAAAAAAAAAAqwMUAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T18:33:13.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-01T18:33:13.82Z"
             },
             {
               "$type": "Document",
@@ -171,7 +168,7 @@
               "RelativeDocumentMoniker": "Layered_project\\Customer\\CustomerRepoDB.cs",
               "ToolTip": "D:\\New folder (2)\\sem2\\OOPS\\Layered_project\\Layered_project\\Customer\\CustomerRepoDB.cs",
               "RelativeToolTip": "Layered_project\\Customer\\CustomerRepoDB.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwGQAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowGQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-01T18:00:48.917Z",
               "EditorCaption": ""
@@ -222,8 +219,7 @@
               "RelativeToolTip": "Layered_project\\Shop.cs*",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T22:25:09.41Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-19T22:25:09.41Z"
             },
             {
               "$type": "Document",
@@ -283,8 +279,7 @@
               "RelativeToolTip": "Layered_project\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T21:30:47.77Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-19T21:30:47.77Z"
             },
             {
               "$type": "Document",
@@ -296,8 +291,7 @@
               "RelativeToolTip": "Layered_project\\Order\\OrderModel.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAUwBwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T21:39:08.975Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-19T21:39:08.975Z"
             },
             {
               "$type": "Document",

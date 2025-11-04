@@ -29,6 +29,13 @@ namespace Layered_project.Order
                     string contact = reader["Contact"].ToString();
                     string address = reader["Address"].ToString();
                     string items = reader["items"].ToString();
+                    string[] rec = items.Split('|');
+                    List<OrderItem> itemslist = new List<OrderItem>();
+                    foreach (string recitem in rec)
+                    {
+                        string[] itemparts = recitem.Split(',');
+
+                    }
                     
                 }
 
