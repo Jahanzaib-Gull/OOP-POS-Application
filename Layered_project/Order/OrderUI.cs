@@ -42,7 +42,7 @@ namespace Layered_project.Order
                         Console.WriteLine("! Error: Could not create new customer.");
                         return false;
                     }
-                    Console.WriteLine($"Customer '{customer.GetName()}' created successfully.");
+                    Console.WriteLine($"Customer '{customer.name}' created successfully.");
                 }
                 else
                 {
@@ -52,12 +52,12 @@ namespace Layered_project.Order
             }
             else
             {
-                Console.WriteLine($"\nCustomer '{customer.GetName()}' found. Starting order...");
+                Console.WriteLine($"\nCustomer '{customer.name}' found. Starting order...");
             }
 
             Console.Write("Customer Details:\n\n" +
-                          "Name: " + customer.GetName() + ", Phone Number: " + customer.GetPhone() + ", Age: " + customer.GetAge() + ", Address: " + customer.GetAddress() + "\n\n");
-            OrderModel order = new OrderModel(customer.GetName(), customer.GetPhone(), customer.GetAddress());
+                          "Name: " + customer.name + ", Phone Number: " + customer.phone + ", Age: " + customer.age + ", Address: " + customer.address + "\n\n");
+            OrderModel order = new OrderModel(customer.name, customer.phone, customer.address);
 
 
             while (true)
@@ -78,7 +78,7 @@ namespace Layered_project.Order
                 Console.WriteLine("Enter product quantity");
                 int quantity = int.Parse(Console.ReadLine());
 
-                OrderItem item = new OrderItem(product.GetName(), quantity, product.GetSalePrice());
+                OrderItem item = new OrderItem(product.name, quantity, product.salePrice);
                 order.AddOrder(item);
                 Console.WriteLine("Do you want to add more product(y/n)");
                 if (Console.ReadLine().ToLower() == "n")

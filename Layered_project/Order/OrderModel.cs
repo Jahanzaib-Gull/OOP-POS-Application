@@ -8,9 +8,12 @@ namespace Layered_project.Order
 {
     internal class OrderModel
     {
-        public string customername;
-        public string contact;
-        public string address;
+        public string customername { get; set; }
+        public int orderid { get; set; }
+        public string contact {  get; set; }
+        public string address { get; set; }
+
+
         public List<OrderItem> ordersList = new List<OrderItem>();
 
         public OrderModel(string customername,string contact,string address)

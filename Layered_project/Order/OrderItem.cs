@@ -8,6 +8,7 @@ namespace Layered_project.Order
 {
     internal class OrderItem
     {
+
         public string product;
         public int quantity;
         public float saleprice;
